@@ -1,0 +1,117 @@
+# ============================================================================
+# PRODUCTION GITIGNORE
+# ============================================================================
+
+# ========== SECRETS - NEVER COMMIT ==========
+.env
+.env.local
+.env.*.local
+.env.production
+*.key
+*.pem
+*.p8
+
+# ========== PYTHON DEPENDENCIES ==========
+venv/
+env/
+ENV/
+.venv
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+.installed.cfg
+*.egg
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ========== IDE & EDITORS ==========
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+
+# ========== TESTING & DEVELOPMENT ==========
+test_*.py
+check_*.py
+diagnose_*.py
+demo.py
+debug_*.py
+*.sqlite
+*.db
+
+# ========== DOCUMENTATION (DEV ONLY) ==========
+docs/
+*.md
+!README.md
+!QUICKSTART.md
+
+# ========== LOGS & TEMP FILES ==========
+*.log
+*.tmp
+*.bak
+*.backup
+*.old
+.cache/
+
+# ========== UNNEEDED SOURCE FILES ==========
+src/api_*.py
+src/test_*.py
+src/*_old.py
+src/*_backup.py
+src/training_*.py
+src/train_*.py
+src/data_*.py
+src/check_*.py
+src/diagnose_*.py
+
+# ========== VERCEL ==========
+.vercel
+.now
+
+# ========== MACOS ==========
+.AppleDouble
+.LSOverride
+
+# ========== WINDOWS ==========
+Thumbs.db
+ehthumbs.db
+
+logs/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Docker
+.dockerignore
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*~
+
+# OS
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Package requirements
+poetry.lock
+Pipfile.lock
