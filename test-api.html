@@ -363,8 +363,8 @@ X-API-Key: fnKkpb6vP4d9NFaFHacF2SOgPjg2MZfLVMn0RKZpWGQ</pre>
             };
 
             try {
-                // Try local first, then fallback to deployed
-                let url = `${baseURL}/api/predict`;
+                // Production Render deployment
+                let url = 'https://mandi-price-prediction-yczz.onrender.com/api/predict';
                 
                 // For local testing, you can use this:
                 // url = 'http://localhost:9000/api/predict';
@@ -464,13 +464,13 @@ X-API-Key: fnKkpb6vP4d9NFaFHacF2SOgPjg2MZfLVMn0RKZpWGQ</pre>
         // Test health endpoint on load
         async function testHealth() {
             try {
-                let url = `${baseURL}/api/health`;
+                let url = 'https://mandi-price-prediction-yczz.onrender.com/api/health';
                 const response = await fetch(url);
                 if (response.ok) {
                     console.log('✅ API Health Check: OK');
                 }
             } catch (error) {
-                console.warn('⚠️ Make sure API is running. For local testing, use http://localhost:9000');
+                console.warn('⚠️ API unreachable. Using production Render deployment: https://mandi-price-prediction-yczz.onrender.com');
             }
         }
 
