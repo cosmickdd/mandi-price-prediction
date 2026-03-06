@@ -27,6 +27,7 @@ ENV = os.getenv("ENV", "production")
 
 # CORS configuration - restricted to specific domains
 ALLOWED_ORIGINS = [
+    "https://mandi-price-prediction-yczz.onrender.com",
     "https://yourdomain.com",
     "https://www.yourdomain.com",
 ]
@@ -35,6 +36,7 @@ if ENV == "development":
     ALLOWED_ORIGINS.extend([
         "http://localhost:3000",
         "http://localhost:8000",
+        "http://localhost",
     ])
 
 # ============================================================================
