@@ -10,6 +10,7 @@ from functools import lru_cache
 
 from fastapi import FastAPI, HTTPException, Header, status, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, field_validator
 
@@ -95,11 +96,8 @@ def create_app() -> FastAPI:
     # ========== STATIC FILES ==========
     
     # Mount static files (test-api.html, etc)
-    from fastapi.staticfiles import StaticFiles
-    import os as os_module
-    
-    static_dir = os_module.path.join(os_module.path.dirname(__file__), "static")
-    if os_module.path.exists(static_dir):
+    static_dir = os.path.join(os.path.dirname(__file__), "static")
+    if os.path.exists(static_dir):
         app.mount("/static", StaticFiles(directory="static"), name="static")
         logger.info("✅ Static files mounted at /static")
     
