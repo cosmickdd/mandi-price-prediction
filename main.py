@@ -92,6 +92,17 @@ def create_app() -> FastAPI:
         max_age=3600,
     )
     
+    # ========== STATIC FILES ==========
+    
+    # Mount static files (test-api.html, etc)
+    from fastapi.staticfiles import StaticFiles
+    import os as os_module
+    
+    static_dir = os_module.path.join(os_module.path.dirname(__file__), "static")
+    if os_module.path.exists(static_dir):
+        app.mount("/static", StaticFiles(directory="static"), name="static")
+        logger.info("✅ Static files mounted at /static")
+    
     # ========== SERVICE INITIALIZATION ==========
     
     service_cache = {}
